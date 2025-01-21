@@ -7,7 +7,7 @@ class Ride
         @admission_fee = ride_details[:admission_fee]
         @excitement = ride_details[:excitement]
         @total_revenue = 0
-        @rider_log = {}
+        @rider_log = Hash.new(0)
     end
 
     def board_rider(visitor)
@@ -27,8 +27,6 @@ class Ride
     def update_rider_log(visitor)
         if @rider_log[visitor]
             @rider_log[visitor] += 1
-        else
-            @rider_log[visitor] = 1
         end
     end
 end
